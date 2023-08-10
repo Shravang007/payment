@@ -3,5 +3,4 @@ RUN           mkdir /app
 WORKDIR       /app
 COPY          payment.ini payment.py rabbitmq.py requirements.txt /app/
 RUN           pip3.6 install -r requirements.txt
-#COPY          run.sh .
 ENTRYPOINT    ["uwsgi", "--ini", "payment.ini"]
